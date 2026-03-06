@@ -32,12 +32,47 @@
 
 <style lang="css" scoped>
 .task {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .task-description {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+#solution-2 .container {
+  padding: 1.5rem;
+  background: #1b1b1d;
+  box-shadow: 0 0 0 2px #101113;
+}
+
+#solution-2 .title {
+  margin-bottom: 1.5rem;
+  color: #b6b6b9;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+#solution-2 .grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+#solution-2 .grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.55rem;
+  background: linear-gradient(140deg, #ff9f0f 0%, #e52d7a 100%);
+  color: #ffd2a6;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
 }
 </style>
