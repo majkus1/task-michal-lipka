@@ -1,0 +1,45 @@
+<script setup lang="ts">
+import type { Person } from '@/types/person'
+
+defineProps<{
+  people: Person[]
+}>()
+</script>
+
+<template>
+  <table class="people-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody v-if="!people.length">
+      <tr>
+        <td colspan="3">No data</td>
+      </tr>
+    </tbody>
+    <tbody v-else>
+      <tr v-for="person in people" :key="person.email">
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</template>
+
+<style scoped>
+.people-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.people-table th,
+.people-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+</style>
