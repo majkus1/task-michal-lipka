@@ -22,6 +22,12 @@ server.get('/api/task-1/people', async () => {
   return people
 })
 
+server.get('/api/task-3/time', async () => {
+  const time = new Date().toLocaleTimeString('en-GB', { hour12: false })
+
+  return { time }
+})
+
 server.listen({ port: 8080 }, (err, address) => {
   if (err) {
     console.error(err)
