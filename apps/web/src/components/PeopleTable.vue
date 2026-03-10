@@ -15,7 +15,12 @@ defineProps<{
         <th>Email</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody v-if="!people.length">
+      <tr>
+        <td colspan="3">No data</td>
+      </tr>
+    </tbody>
+    <tbody v-else>
       <tr v-for="person in people" :key="person.email">
         <td>{{ person.name }}</td>
         <td>{{ person.age }}</td>
