@@ -34,4 +34,15 @@ describe('PeopleTable', () => {
     expect(rows[1]?.text()).toContain('30')
     expect(rows[1]?.text()).toContain('bob@example.com')
   })
+
+  it('renders "No data" when people list is empty', () => {
+    const wrapper = mount(PeopleTable, {
+      props: {
+        people: [],
+      },
+    })
+
+    expect(wrapper.text()).toContain('No data')
+    expect(wrapper.findAll('tbody tr')).toHaveLength(1)
+  })
 })
