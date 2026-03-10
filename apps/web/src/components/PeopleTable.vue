@@ -7,7 +7,15 @@ defineProps<{
 </script>
 
 <template>
-  <table class="people-table"></table>
+  <table class="people-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+  </table>
 </template>
 
 <style scoped>
