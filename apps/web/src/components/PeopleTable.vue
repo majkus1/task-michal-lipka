@@ -7,27 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <table class="people-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody v-if="!people.length">
-      <tr>
-        <td colspan="3">No data</td>
-      </tr>
-    </tbody>
-    <tbody v-else>
-      <tr v-for="person in people" :key="person.email">
-        <td>{{ person.name }}</td>
-        <td>{{ person.age }}</td>
-        <td>{{ person.email }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <table class="people-table"></table>
 </template>
 
 <style scoped>
