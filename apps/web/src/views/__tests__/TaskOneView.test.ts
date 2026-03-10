@@ -1,4 +1,5 @@
-import { mount } from '@vue/test-utils'
+import { flushPromises, mount } from '@vue/test-utils'
+import { nextTick } from 'vue'
 import { describe, expect, it, vi } from 'vitest'
 
 import { fetchPeople } from '@/services/peopleApi'
@@ -18,9 +19,8 @@ describe('TaskOneView', () => {
 
     expect(wrapper.text()).toContain('Loading...')
 
-    await Promise.resolve()
-    await Promise.resolve()
-    await wrapper.vm.$nextTick()
+    await flushPromises()
+    await nextTick()
 
     expect(fetchPeople).toHaveBeenCalledTimes(1)
     expect(wrapper.text()).toContain('alice@example.com')
