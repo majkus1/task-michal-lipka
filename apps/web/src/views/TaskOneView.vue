@@ -20,33 +20,16 @@
       </div>
     </div>
     <div id="solution-1">
-      <p v-if="loading">Loading...</p>
-      <p v-else-if="error">{{ error }}</p>
-      <PeopleTable v-else :people="people" />
+      <PeopleTable :people="people" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
 import PeopleTable from '@/components/PeopleTable.vue'
-import { fetchPeople } from '@/services/peopleApi'
 import type { Person } from '@/types/person'
 
 const people = ref<Person[]>([])
-const loading = ref(true)
-const error = ref<string | null>(null)
-
-onMounted(async () => {
-  error.value = null
-
-  try {
-    people.value = await fetchPeople()
-  } catch (caughtError) {
-    error.value = caughtError instanceof Error ? caughtError.message : 'Unknown error'
-  } finally {
-    loading.value = false
-  }
-})
 </script>
