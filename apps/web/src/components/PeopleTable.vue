@@ -15,6 +15,13 @@ defineProps<{
         <th>Email</th>
       </tr>
     </thead>
+    <tbody>
+      <tr v-for="person in people" :key="person.email">
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.email }}</td>
+      </tr>
+    </tbody>
   </table>
 </template>
 
